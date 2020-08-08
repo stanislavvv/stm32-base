@@ -16,9 +16,6 @@ SIZE		:= $(PREFIX)-size
 OBJDUMP		:= $(PREFIX)-objdump
 GDB		:= $(PREFIX)-gdb
 STFLASH		= $(shell which st-flash)
-STYLECHECK	:= /checkpatch.pl
-STYLECHECKFLAGS	:= --no-tree -f --terse --mailback
-STYLECHECKFILES	:= $(shell find . -name '*.[ch]')
 OPT		:= -Os -g3
 CSTD		?= -std=c99
 

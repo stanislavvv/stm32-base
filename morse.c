@@ -3,29 +3,6 @@
 #include <libopencm3/stm32/gpio.h>
 #include "morse.h"
 
-/* long pause */
-void lspc(void)
-{
-  vTaskDelay(pdMS_TO_TICKS(DAH_LENGTH));
-}
-
-/* short pause */
-void sspc(void)
-{
-  vTaskDelay(pdMS_TO_TICKS(DIT_LENGTH));
-}
-
-/* hardware blink functions */
-static inline void LED_on(void)
-{
-  gpio_clear(GPIOC,GPIO13);
-}
-
-static inline void LED_off(void)
-{
-  gpio_set(GPIOC,GPIO13);
-}
-
 /* send dot */
 static inline void dit(void)
 {
