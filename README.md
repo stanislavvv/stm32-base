@@ -9,7 +9,7 @@ Will be used for learning and some experiments.
   * `libopencm3` -- symlink to cloned and compiled [libopencm3](https://github.com/libopencm3/libopencm3).
 I use one `libopencm3` directory within several project. Will be subrepo when setup ci someday.
   * `ld` -- ld scripts directory. Copy them from `libopencm3` and edit for your needs.
-  * `mk` -0 Makefile includes, common and target specific
+  * `mk` -- Makefile includes, common and target specific. Also contain `mk/cppcheck.includes` -- directories list for '*.h' used by `make check`.
   * `rtos` -- [FreeRTOS](https://freertos.org/) files, copied from official sources + opencm3.c taken from [stm32f103c8t6](https://github.com/ve3wwg/stm32f103c8t6) project.
 
 ## project files
