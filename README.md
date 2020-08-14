@@ -21,4 +21,20 @@ I use one `libopencm3` directory within several project. Will be subrepo when se
   * `Makefile` -- main Makefile. Comment line with `mk/Makefile.stm32f103.incl` and uncomment next for selecting stm32f303 target
   * `morse.h`, `morse.c` -- quick and dirty library for morse blinking on port C GPIO13.
 
+## build project
+
+default for stm32f103 (standard blue pill):
+
+```
+make clean
+make
+```
+
+for stm32f303 placed on blue pill board:
+
+```
+make clean
+TARGET_CPU=stm32f303 make
+```
+
 
