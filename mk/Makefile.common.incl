@@ -120,7 +120,7 @@ print-%:
 
 # check sources. -$(CSTD) translate -std=... to --std=...
 check:
-	cppcheck cppcheck -q --enable=all -$(CSTD) --check-config --includes-file=mk/cppcheck.includes ./*.c ./*.h ./*.cpp ./*.cxx
+	cppcheck -q --enable=all -$(CSTD) --check-config --includes-file=mk/cppcheck.includes ./*.c ./*.h ./*.cpp ./*.cxx
 
 clean:
 	@#printf "  CLEAN\n"
