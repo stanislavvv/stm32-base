@@ -1,5 +1,6 @@
+/* copyright string for vera++ */
 #include "FreeRTOS.h"
-#include "task.h" /* remove implicit declaration warning */
+#include "task.h"
 #include <libopencm3/stm32/gpio.h>
 #include "morse.h"
 
@@ -24,7 +25,8 @@ static inline void dah(void)
 /* send morse character */
 void send_letter(char c)
 {
-  switch(c) {
+  switch (c)
+  {
     case 'A':
     case 'a':
       dit(); dah();
@@ -203,8 +205,9 @@ void send_letter(char c)
 /* send zero-terminated string */
 void send_string(char s[])
 {
-  for (uint8_t i = 0; s[i] != '\0'; i++) {
+  for (uint8_t i = 0; s[i] != '\0'; i++)
+  {
     send_letter(s[i]);
-    if (i == 255) break; /* strlen(s) <= 256 */
+    if (i == 255) { break; } /* strlen(s) <= 256 */
   }
 }

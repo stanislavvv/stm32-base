@@ -1,4 +1,5 @@
-/* 
+/* copyright string for vera++
+ *
  * The LED on PC13 is sending string s content in Morse code
  */
 #include "FreeRTOS.h"
@@ -26,13 +27,15 @@ static char s[] = "Hello world!!!";
         /* This function will get called if a task overflows its stack. */
         ( void ) pxTask;
         ( void ) pcTaskName;
-        for( ;; );
+        for ( ;; ) { };
     }
 #endif
 
 static void
-task_hello(void *args __attribute((unused))) {
-    for (;;) {
+task_hello(void *args __attribute((unused)))
+{
+    for (;;)
+    {
         send_string(s);
         lspc();
     }
@@ -40,14 +43,15 @@ task_hello(void *args __attribute((unused))) {
 
 
 int
-main(void) {
+main(void)
+{
 
     init_gpio();
 
-    xTaskCreate(task_hello,"hello",100,NULL,configMAX_PRIORITIES-1,NULL);
+    xTaskCreate(task_hello, "hello", 100, NULL, configMAX_PRIORITIES-1, NULL);
     vTaskStartScheduler();
 
-    for (;;);
+    for (;;) { };
     return 0;
 }
 

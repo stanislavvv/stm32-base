@@ -1,3 +1,4 @@
+/* copyright string for vera++ */
 /* morse functions */
 /* not for production use */
 
@@ -13,12 +14,11 @@
 /* short pause */
 #define sspc() vTaskDelay(pdMS_TO_TICKS(DIT_LENGTH));
 
-#define LED_on() gpio_clear(LED_PORT,LED_PIN);
+#define LED_on() gpio_clear(LED_PORT, LED_PIN);
 
-#define LED_off() gpio_set(LED_PORT,LED_PIN);
+#define LED_off() gpio_set(LED_PORT, LED_PIN);
 
 /* send morse character */
 void send_letter(char c);
 /* send string */
 void send_string(char s[]);
-
